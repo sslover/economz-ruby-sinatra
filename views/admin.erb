@@ -1,0 +1,18 @@
+<h1>All Recipe Suggestions</h1>
+
+<div style="border: 1px solid #b8b8b8; padding: 15px;">
+<% @recipes.each do |thisRecipe| %>
+<p>Recipe ID is: <%=thisRecipe.id%></p>
+<p>Food Item is: <%=thisRecipe.fooditem%></p>
+<p>Recipe Name is: <%=thisRecipe.name%></p>
+<p>Recipe URL is: <%=thisRecipe.url%></p>
+<p>Recipe is currently active? <%=thisRecipe.active%></p>
+<p><a href="http://itp.nyu.edu/~sjs663/sinatra/economz/<%=thisRecipe.id%>/edit"> Edit  </a>
+<a href="http://itp.nyu.edu/~sjs663/sinatra/economz/<%=thisRecipe.id%>/delete"> Delete  </a>
+<a href="http://itp.nyu.edu/~sjs663/sinatra/economz/<%=thisRecipe.id%>/active"> Activate  </a>
+<a href="http://itp.nyu.edu/~sjs663/sinatra/economz/<%=thisRecipe.id%>/deactive"> De-activate</a>
+</p>
+<hr>
+<% end %>
+</div>
+

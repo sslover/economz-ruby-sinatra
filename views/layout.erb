@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>economz | <%= @nav %></title>
+    <meta name="description" content="economz is a visualization project that helps people make sense of their carbon foodprint. By creating meals using popular and standard food items, economz shows the associated carbon footprint using a gauge we’re all familiar with: car miles traveled.">
+    <style type="text/css">
+      @font-face {
+        font-family: 'tradegothicregular';
+        src: url('http://itp.nyu.edu/~sjs663/sinatra/economz/public/fonts/tradegothic/tradegothic-webfont-webfont.eot');
+        src: url('http://itp.nyu.edu/~sjs663/sinatra/economz/public/fonts/tradegothic/tradegothic-webfont.eot?#iefix') format('embedded-opentype'),
+          url('http://itp.nyu.edu/~sjs663/sinatra/economz/public/fonts/tradegothic/tradegothic-webfont-webfont.woff') format('woff'),
+          url('http://itp.nyu.edu/~sjs663/sinatra/economz/public/fonts/tradegothic/tradegothic-webfont-webfont.ttf') format('truetype'),
+          url('http://itp.nyu.edu/~sjs663/sinatra/economz/public/fonts/tradegothic/tradegothic-webfont-webfont.svg#tradegothicregular') format('svg');
+        font-weight: bold;
+        font-style: normal;
+     }
+      body {
+        width: auto;
+        background: f2f2f2;
+        background-image: url('http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/gray_jean.png');
+        background-repeat: repeat;
+        color: #58585b;
+        font:14px/26px 'myriad pro', arial, helvetica, sans-serif;
+        text-align: center;
+        margin:0px;
+        padding:0px;
+      }
+      img{
+        border-style:none;
+        vertical-align:top;
+      }
+      a{
+        text-decoration:none;
+        color:#1e5b2e;
+      }
+      a:hover{
+        text-decoration:underline;
+      }
+      #top {
+        background-color: #1e5b2e;
+        color: #ffffff;
+        padding: 2.7em 0 2.7em; 
+      }
+      #header {
+        text-align: center;
+        text-transform: uppercase; 
+      }
+      .wrapper {
+        text-align: left;
+        margin: 30px auto;
+        width: 982px;
+      }
+      h1 {
+        font-family: 'tradegothicregular', 'myriad pro', helvetica, arial, sans-serif;
+        color: #1d5b2e;
+      }
+      p {
+        color: #58585B;
+        font-size: 18px;
+        text-align: left;
+      }
+      ul, ol {
+        color: #58585B;
+        font-size: 18px;
+        text-align: left;
+      }
+      input[type="text"] {
+        padding: 5px;
+        font: normal 14px/16px;  
+        color: #121212;
+      }
+      .bottom-border-form{
+        color: white;
+      }
+      #nav {
+        width:100%;
+        margin: 30px auto;
+        width: 982px;
+        overflow:hidden;
+        position:relative;
+        max-height: 36px;
+      }
+    #nav ul {
+       clear:left;
+       float:left;
+       list-style:none;
+       margin:0;
+       padding:0;
+       position:relative;
+       left:50%;
+       text-align:center;
+    } 
+    #nav ul li {
+       display:block;
+       float:left;
+       list-style:none;
+       margin:0;
+       padding:0;
+       position:relative;
+       right:50%;
+    }   
+    #nav ul li a {
+      display: block;
+      float: left;
+      font-size: 20px;
+      padding: 0px 40px;
+      font-family: 'tradegothicregular', 'myriad pro', helvetica, arial, sans-serif;
+      color: #1d5b2e;
+      font-weight: 100;
+      letter-spacing: 2px;
+      border-right: 1px solid #1d5b2e;
+      text-decoration: none;
+    }
+    #nav ul li a:hover {
+      background: #1d5b2e;
+      color: #ffffff;
+    }
+    #nav .current{
+      background: #1d5b2e;
+      color: #ffffff;
+    }
+    .canvas-border{
+      border: 1px solid #1E5B2E;
+    }
+    .food-block{
+      float: left;
+      padding: 10px;
+      padding-right: 30px;
+      width: 96px;
+    }
+    .food-block a{
+      display: block;
+      margin-top: 2px;
+      margin-top: 5px;
+      margin-left: 9px;
+      line-height: 16px;
+    }
+    .clear {
+      clear: both;
+    }
+    .middle .food-block a{
+      color: orange;
+    }
+    .bottom .food-block a{
+      color: red;
+    }
+    select {
+       background: transparent;
+       width: 52%;
+       padding: 5px;
+       font-size: 16px;
+       border: 1px solid #ccc;
+       height: 26px;
+    }
+    input[type="text"] {
+      width: 50%;
+    }
+    label {
+      width:165px;
+      float:left;
+    }
+    button{
+      width:125px;
+      height:31px;
+      background:#666666 url('http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/button.png') no-repeat;
+      text-align:center;
+      line-height:31px;
+      color:#FFFFFF;
+      font-size:11px;
+      font-weight:bold;
+    }
+    </style>
+    <% if @nav == "home" %>
+      <script type="text/javascript" src="http://itp.nyu.edu/~sjs663/sinatra/economz/processing.js"></script>
+    <% end %>
+    <% if @nav == "gallery" %>
+      <link rel="stylesheet" href="http://itp.nyu.edu/~sjs663/sinatra/economz/public/colorbox/colorbox.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/colorbox/jquery.colorbox-min.js"></script>
+      <script>
+        $(document).ready(function(){
+          //Examples of how to assign the ColorBox event to elements
+          $(".group1").colorbox({rel:'group1'});
+          $(".group2").colorbox({rel:'group2', transition:"fade"});
+          $(".group3").colorbox({rel:'group3', transition:"none", width:"75%", height:"75%"});
+          $(".group4").colorbox({rel:'group4', slideshow:true});
+          $(".ajax").colorbox();
+          $(".youtube").colorbox({iframe:true, innerWidth:425, innerHeight:344});
+          $(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+          $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+          $(".inline").colorbox({inline:true, width:"50%"});
+          $(".callbacks").colorbox({
+            onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+            onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+            onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+            onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+            onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+          });
+          
+          //Example of preserving a JavaScript event for inline calls.
+          $("#click").click(function(){ 
+            $('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+            return false;
+          });
+        });
+      </script>
+  <% end %>
+  </head>
+  <body>
+   <div id="top">
+    <div id="header">
+      <a href="http://itp.nyu.edu/~sjs663/sinatra/economz/"><img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/logo.png"></img></a>
+    </div>
+   </div>
+    <!-- ################ Begin Nav ############### -->
+    <div id="nav">
+      <ul>
+        <li><a <%= 'class="current"' if @nav == "home" %> href="http://itp.nyu.edu/~sjs663/sinatra/economz/">Home</a></li>
+        <li><a <%= 'class="current"' if @nav == "gallery" %> href="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">Gallery</a></li>
+        <li><a <%= 'class="current"' if @nav == "physical installation" %> href="http://itp.nyu.edu/~sjs663/sinatra/economz/physical-installation">Physical Installation</a></li>
+        <li><a <%= 'class="current"' if @nav == "about" %> style="border-right: none;" href="http://itp.nyu.edu/~sjs663/sinatra/economz/about">About</a></li>
+      </ul>
+    </div>
+    <!-- ################## End Nav ############## --> 
+   <div class="wrapper" <%= 'style="width:890px"' if @internal == "true" %>>
+      <%= yield %>
+    </div>
+  </body>
+</html>  

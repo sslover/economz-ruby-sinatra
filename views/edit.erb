@@ -1,0 +1,23 @@
+<form action="http://itp.nyu.edu/~sjs663/sinatra/economz/<%=@id%>/edit" method="POST">
+		      <p>Submit a recipe for:
+		          <select name="fooditem" required>
+		            <option value="lentils" <%= 'selected' if @updateRecipe.fooditem == "lentils" %> >Lentils</option>
+		            <option value="beans" <%= 'selected' if @updateRecipe.fooditem == "beans" %> >Beans</option>
+		            <option value="tomatoes" <%= 'selected' if @updateRecipe.fooditem == "tomatoes" %> >Tomatoes</option>
+		            <option value="tofu" <%= 'selected' if @updateRecipe.fooditem == "tofu" %> >Tofu</option>
+		            <option value="broccoli" <<%= 'selected' if @updateRecipe.fooditem == "broccoli" %> >Broccoli</option>
+		            <option value="milk" <%= 'selected' if @updateRecipe.fooditem == "milk" %> >Milk</option>
+		            <option value="yogurt" <%= 'selected' if @updateRecipe.fooditem == "yogurt" %> >Yogurt</option>
+		            <option value="nuts" <%= 'selected' if @updateRecipe.fooditem == "nuts" %> >Nuts</option>
+		            <option value="peanutbutter" <%= 'selected' if @updateRecipe.fooditem == "peanutbutter" %> >Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" value="<%=@updateRecipe.name%>" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" value="<%=@updateRecipe.url%>" /></p>
+		        <p><label>Make Active?</label>
+		        <fieldset>
+		        	<input type="radio" required name="active" value="0" <%= 'checked' if @updateRecipe.active == 0 %> >deactive</input>
+		        	<input type="radio" required name="active" value="1" <%= 'checked' if @updateRecipe.active == 1 %>  >active</input>
+		        </fieldset>
+		        <input type="submit" value="Edit Recipe">
+		      </form>

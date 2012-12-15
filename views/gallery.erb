@@ -1,0 +1,559 @@
+<h1>Gallery of Foods</h1>
+<p>When it comes to your carbon foodprint, all foods are not created equally. Certain foods come with a much larger carbon impact, due to the life-cycle production systems it takes to grow, manufacture, and bring them to your plate. For example: meat bad, veggies good. Here you'll find a gallery of economz friendly and unfriendly food choices. <strong>Even better,</strong> for each friendly meal there are recipe ideas to get you on your eco-eating path to success!<br /> <strong><a class='inline' href="#inline_content">And please help us out by submitting your own favorite eco-friendly recipes!</a></strong></p>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content' style='padding:10px; background:#f1f1f1;'>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu" >Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<h1>Economz Friendly Foods</h1>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/0-d.png"><img>
+	<a class='inline' href="#inline_content0">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content0' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/0-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong>  0.17 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Great choice for climate-friendly protein. Good source of fiber and nutrients.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "lentils" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils" selected>Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu">Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/1-d.png"><img>
+	<a class='inline' href="#inline_content1">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content1' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/1-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.73 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Good source of protein, fiber, nutrients. Use dry beans to avoid bisphenol A (BPA) found in cans.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "beans" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans" selected>Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu">Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/2-d.png"><img>
+	<a class='inline' href="#inline_content2">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content2' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/2-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.96 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Excellent source of plant protein. Choose organic to avoid GMOs.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "tofu" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu" selected>Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/3-d.png"><img>
+	<a class='inline' href="#inline_content3">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content3' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/3-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.17 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Eat more fruits and veggies to prevent disease. Low in fat and calories, high in nutrients and fiber.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "tomatoes" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes" selected>Tomatoes</option>
+		            <option value="tofu">Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/4-d.png"><img>
+	<a class='inline' href="#inline_content4">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content4' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/4-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.83 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Eat more fruits and veggies to prevent disease. Low in fat, calories. High in nutrients, fiber.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "broccoli" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu">Tofu</option>
+		            <option value="broccoli" selected>Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/13-d.png"><img>
+	<a class='inline' href="#inline_content5">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content5' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/13-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.90 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Choose organic. Avoid growth hormones; skip chocolate and other flavorings.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "milk" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu">Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk" selected>Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/14-d.png"><img>
+	<a class='inline' href="#inline_content6">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content6' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/14-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 1.14 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Choose organic and low-fat when possible. Avoid growth harmones.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "yogurt" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu">Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt" selected>Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/21-d.png"><img>
+	<a class='inline' href="#inline_content7">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content7' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/21-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.84 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> High in protein and "good" fats. Great on-the-go snack.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "nuts" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu">Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts" selected>Nuts</option>
+		            <option value="peanutbutter">Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/22-d.png"><img>
+	<a class='inline' href="#inline_content8">Learn More + Add Recipes</a>
+</div>
+		<!-- This contains the hidden content for inline calls -->
+		<div style='display:none'>
+			<div id='inline_content8' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/22-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.89 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Buy peanut butter made from valencia peanuts to avoid aflatoxin. Avoid partially hydrogenated oils.</p>
+			<p><strong>Some Recipes</strong>
+				<ul>
+				<% @recipes.each do |thisRecipe| %>
+					<%if thisRecipe.fooditem == "peanutbutter" && thisRecipe.active == 1%>
+					  <li><a target="_blank" href="<%=thisRecipe.url%>"><%=thisRecipe.name%></a></li>
+					 <% end %> 
+				<% end %>
+				</ul>
+					
+			</p>
+			<p><strong>Suggest an Eco-Friendly Recipe for Addition</strong></p>
+		      <form method="POST" action="http://itp.nyu.edu/~sjs663/sinatra/economz/gallery">
+		      <p><label>Submit a recipe for:</label>
+		          <select name="fooditem" required>
+		            <option value="lentils">Lentils</option>
+		            <option value="beans">Beans</option>
+		            <option value="tomatoes">Tomatoes</option>
+		            <option value="tofu">Tofu</option>
+		            <option value="broccoli">Broccoli</option>
+		            <option value="milk">Milk</option>
+		            <option value="yogurt">Yogurt</option>
+		            <option value="nuts">Nuts</option>
+		            <option value="peanutbutter" selected>Peanut Butter</option>	            
+		          </select>
+		        </p>
+		      	<p><label>Name of the recipe</label> <input type="text" required name="name" placeholder="Recipe Name" /></p>
+		        <p><label>Recipe URL</label> <input type="text" required name="url" placeholder="http://www.URL.com" /></p>
+		        <button type="submit" value="Suggest Recipe">
+		      </form>
+			</div>
+		</div>
+<div class="clear"></div>
+<div class="middle">
+<h1 style ="color:orange">Economz Middle-Ground Foods</h1>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/20-d.png"><img>
+	<a class='inline' href="#inline_content9">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content9' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/20-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 1.02 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Opt for less processed, more nutritious brown rice. Consider higher-protein grains like quinoa.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/17-d.png"><img>
+	<a class='inline' href="#inline_content10">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content10' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/17-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.75 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Buy organic - conventionally grown potatoes tend to be high in pesticide residues.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/18-d.png"><img>
+	<a class='inline' href="#inline_content11">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content11' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/18-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 0.68 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Buy organic - conventionally grown potatoes tend to be high in pesticide residues.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/19-d.png"><img>
+	<a class='inline' href="#inline_content12">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content12' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/19-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 1.54 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Buy organic - conventionally grown potatoes tend to be high in pesticide residues.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/15-d.png"><img>
+	<a class='inline' href="#inline_content13">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content13' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/15-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 1.12 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Pick organic and/or pasture-raised. Look for certified humane.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/5-d.png"><img>
+	<a class='inline' href="#inline_content14">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content14' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/5-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 2.30 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Rich in Omega-3 fatty acids. Limit consumption to reduce mercury exposure and prevent overfishing.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/6-d.png"><img>
+	<a class='inline' href="#inline_content15">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content15' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/6-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 2.39 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Best meat pick. Cook skinless. Opt for organic, pasture-raised or antibiotic-free.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/7-d.png"><img>
+	<a class='inline' href="#inline_content16">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content16' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/7-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 3.60 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Good meat pick. Cook skinless. Opt for organic, pasture-raised or antibiotic-free.</p>
+			</div>
+		</div>
+<div class="clear"></div>
+</div>
+<div class = "bottom">
+<h1 style ="color:red">Economz Unfriendly Foods</h1>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/8-d.png"><img>
+	<a class='inline' href="#inline_content17">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content17' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/8-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 3.68 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Avoid most farmed salmon -- higher in toxic PCBs than wild. Air-shipped fish have higher emissions.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/9-d.png"><img>
+	<a class='inline' href="#inline_content18">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content18' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/9-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 3.49 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Eat less. Choose pasture-raised, certified humane. Skip processed products.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/10-d.png"><img>
+	<a class='inline' href="#inline_content19">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content19' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/10-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 1.48 car miles driver per meal portion (strip)</p>
+			<p><strong>The Commentary:</strong> Eat less. Choose pasture-raised, certified humane. Skip processed products.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/16-d.png"><img>
+	<a class='inline' href="#inline_content20">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content20' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/16-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 2.15 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Eat less. Opt for lower-fat options like part-skim mozzarella, gouda and cottage cheese.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/11-d.png"><img>
+	<a class='inline' href="#inline_content21">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content21' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/11-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 7.84 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> Gress-fed and lean is healthiest. Choose certified humane. Avoid processed/preserved.</p>
+			</div>
+		</div>
+<div class="food-block">
+	<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/12-d.png"><img>
+	<a class='inline' href="#inline_content22">Learn More</a>
+</div>
+		<div style='display:none'>
+			<div id='inline_content22' style='padding:10px; background:#f1f1f1;'>
+			<img src="http://itp.nyu.edu/~sjs663/sinatra/economz/public/images/12-d.png"><img>
+			<p><strong>The Carbon Foodprint:</strong> 11.77 car miles driven per meal portion</p>
+			<p><strong>The Commentary:</strong> The worst choice! If you do eat it, choose grass-fed or lamb shank for less fat. Avoid loin.</p>
+			</div>
+		</div>
+<div class="clear"></div>
+</div>
